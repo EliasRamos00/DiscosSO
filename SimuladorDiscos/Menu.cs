@@ -12,13 +12,22 @@ namespace SimuladorDiscos
 {
     public partial class Menu : Form
     {
+        #region VARIABLES
+
+        #endregion
+        #region CONSTRUCTORES
         public Menu()
         {
             InitializeComponent();
         }
+        #endregion
+        #region METODOS
+
+        #endregion
+        #region EVENTOS
         private void btnFCFS_Click(object sender, EventArgs e)
         {
-            FCFS form = new FCFS();        
+            FCFS form = new FCFS();
             form.Show();
             this.Hide();
         }
@@ -37,10 +46,12 @@ namespace SimuladorDiscos
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        } 
+        }
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+        #endregion
+
     }
 }

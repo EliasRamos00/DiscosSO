@@ -12,21 +12,29 @@ namespace SimuladorDiscos
 {
     public partial class SCAN : Form
     {
+        #region VARIABLES
+
+        #endregion
+        #region CONSTRUCTORES
         public SCAN()
         {
             InitializeComponent();
         }
+        #endregion
+        #region METODOS
 
+        #endregion
+        #region EVENTOS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             Menu form = new Menu();
             form.Show();
         }
-
         private void SCAN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+        #endregion      
     }
 }

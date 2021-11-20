@@ -29,6 +29,7 @@ namespace SimuladorDiscos
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +46,7 @@ namespace SimuladorDiscos
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblLabelTimer = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -214,6 +216,10 @@ namespace SimuladorDiscos
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // FCFS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +255,6 @@ namespace SimuladorDiscos
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblLabelTimer;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Timer timer;
     }
 }

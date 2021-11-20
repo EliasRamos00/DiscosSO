@@ -12,11 +12,20 @@ namespace SimuladorDiscos
 {
     public partial class SSTF : Form
     {
-        public SSTF()
-        {
-            InitializeComponent();
-        }
+        #region VARIABLES
+        #endregion
+        #region CONSTRUCTORES
+         public SSTF()
+                {
+                    InitializeComponent();
+                }
 
+        #endregion
+        #region METODOS
+
+
+        #endregion
+        #region EVENTOS
         private void SSTF_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -28,5 +37,6 @@ namespace SimuladorDiscos
             Menu form = new Menu();
             form.Show();
         }
+        #endregion
     }
 }
