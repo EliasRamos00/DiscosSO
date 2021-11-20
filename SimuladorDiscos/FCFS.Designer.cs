@@ -32,13 +32,6 @@ namespace SimuladorDiscos
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTiempoRetorno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
@@ -47,6 +40,12 @@ namespace SimuladorDiscos
             this.lblLabelTimer = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.dgvProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +67,6 @@ namespace SimuladorDiscos
             this.dgvCPU,
             this.dgvPrioridad,
             this.dgvTiempo,
-            this.dgvTiempoRetorno,
             this.dgvTiempoEspera});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 3);
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,48 +74,6 @@ namespace SimuladorDiscos
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(567, 165);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dgvProceso
-            // 
-            this.dgvProceso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvProceso.HeaderText = "Proceso";
-            this.dgvProceso.Name = "dgvProceso";
-            // 
-            // dgvLlegada
-            // 
-            this.dgvLlegada.HeaderText = "Llegada";
-            this.dgvLlegada.Name = "dgvLlegada";
-            this.dgvLlegada.Width = 70;
-            // 
-            // dgvCPU
-            // 
-            this.dgvCPU.HeaderText = "CPU";
-            this.dgvCPU.Name = "dgvCPU";
-            this.dgvCPU.Width = 70;
-            // 
-            // dgvPrioridad
-            // 
-            this.dgvPrioridad.HeaderText = "Prioridad";
-            this.dgvPrioridad.Name = "dgvPrioridad";
-            this.dgvPrioridad.Width = 70;
-            // 
-            // dgvTiempo
-            // 
-            this.dgvTiempo.HeaderText = "Tiempo";
-            this.dgvTiempo.Name = "dgvTiempo";
-            this.dgvTiempo.Width = 70;
-            // 
-            // dgvTiempoRetorno
-            // 
-            this.dgvTiempoRetorno.HeaderText = "Tiempo de Retorno";
-            this.dgvTiempoRetorno.Name = "dgvTiempoRetorno";
-            this.dgvTiempoRetorno.Width = 70;
-            // 
-            // dgvTiempoEspera
-            // 
-            this.dgvTiempoEspera.HeaderText = "Tiempo de Espera";
-            this.dgvTiempoEspera.Name = "dgvTiempoEspera";
-            this.dgvTiempoEspera.Width = 70;
             // 
             // tableLayoutPanel1
             // 
@@ -156,6 +112,7 @@ namespace SimuladorDiscos
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Inicio";
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnStop
             // 
@@ -168,6 +125,7 @@ namespace SimuladorDiscos
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Detener";
             this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // button3
             // 
@@ -186,11 +144,12 @@ namespace SimuladorDiscos
             this.lblTimer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(294, 54);
+            this.lblTimer.Location = new System.Drawing.Point(309, 54);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(66, 37);
+            this.lblTimer.Size = new System.Drawing.Size(37, 37);
             this.lblTimer.TabIndex = 4;
-            this.lblTimer.Text = "--:--";
+            this.lblTimer.Text = "--";
+            this.lblTimer.TextChanged += new System.EventHandler(this.lblTimer_TextChanged);
             // 
             // lblLabelTimer
             // 
@@ -202,6 +161,7 @@ namespace SimuladorDiscos
             this.lblLabelTimer.Size = new System.Drawing.Size(83, 29);
             this.lblLabelTimer.TabIndex = 5;
             this.lblLabelTimer.Text = "Timer:";
+            this.lblLabelTimer.Click += new System.EventHandler(this.lblLabelTimer_Click);
             // 
             // btnBack
             // 
@@ -218,7 +178,44 @@ namespace SimuladorDiscos
             // 
             // timer
             // 
+            this.timer.Interval = 150;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // dgvProceso
+            // 
+            this.dgvProceso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvProceso.HeaderText = "Peticiones";
+            this.dgvProceso.Name = "dgvProceso";
+            // 
+            // dgvLlegada
+            // 
+            this.dgvLlegada.HeaderText = "Llegada";
+            this.dgvLlegada.Name = "dgvLlegada";
+            this.dgvLlegada.Width = 70;
+            // 
+            // dgvCPU
+            // 
+            this.dgvCPU.HeaderText = "CPU";
+            this.dgvCPU.Name = "dgvCPU";
+            this.dgvCPU.Width = 70;
+            // 
+            // dgvPrioridad
+            // 
+            this.dgvPrioridad.HeaderText = "Pista";
+            this.dgvPrioridad.Name = "dgvPrioridad";
+            this.dgvPrioridad.Width = 70;
+            // 
+            // dgvTiempo
+            // 
+            this.dgvTiempo.HeaderText = "Tiempo de Retorno";
+            this.dgvTiempo.Name = "dgvTiempo";
+            this.dgvTiempo.Width = 70;
+            // 
+            // dgvTiempoEspera
+            // 
+            this.dgvTiempoEspera.HeaderText = "Tiempo de Espera";
+            this.dgvTiempoEspera.Name = "dgvTiempoEspera";
+            this.dgvTiempoEspera.Width = 70;
             // 
             // FCFS
             // 
@@ -241,13 +238,6 @@ namespace SimuladorDiscos
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvProceso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLlegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCPU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrioridad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTiempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTiempoRetorno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTiempoEspera;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
@@ -256,5 +246,11 @@ namespace SimuladorDiscos
         private System.Windows.Forms.Label lblLabelTimer;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvProceso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLlegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCPU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrioridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTiempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTiempoEspera;
     }
 }

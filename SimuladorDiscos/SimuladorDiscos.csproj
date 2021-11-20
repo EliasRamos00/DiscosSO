@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Proceso.cs" />
     <Compile Include="FCFS.cs">
       <SubType>Form</SubType>
     </Compile>
