@@ -1,0 +1,13 @@
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\bin\Debug\SimuladorDiscos.exe.config
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\bin\Debug\SimuladorDiscos.exe
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\bin\Debug\SimuladorDiscos.pdb
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.csproj.AssemblyReference.cache
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.Menu.resources
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.Properties.Resources.resources
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.csproj.GenerateResource.cache
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.csproj.CoreCompileInputs.cache
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.exe
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.pdb
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.FCFS.resources
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.SSTF.resources
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.SCAN.resources
