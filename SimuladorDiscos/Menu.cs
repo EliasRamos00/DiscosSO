@@ -16,34 +16,29 @@ namespace SimuladorDiscos
         {
             InitializeComponent();
         }
-
         private void btnFCFS_Click(object sender, EventArgs e)
         {
             FCFS form = new FCFS();        
             form.Show();
             this.Hide();
         }
-
-        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnSSTF_Click(object sender, EventArgs e)
         {
             SSTF form = new SSTF();
             form.Show();
             this.Hide();
         }
-
         private void btnSCAN_Click(object sender, EventArgs e)
         {
             SCAN form = new SCAN();
             form.Show();
             this.Hide();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        } 
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

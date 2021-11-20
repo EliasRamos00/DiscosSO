@@ -87,7 +87,7 @@ namespace SimuladorDiscos
             this.btnSCAN.Name = "btnSCAN";
             this.btnSCAN.Size = new System.Drawing.Size(150, 48);
             this.btnSCAN.TabIndex = 2;
-            this.btnSCAN.Text = "Algoritmo del elevador o exploración (scan)";
+            this.btnSCAN.Text = "SCAN (Algoritmo del elevador o exploración)";
             this.btnSCAN.UseVisualStyleBackColor = false;
             this.btnSCAN.Click += new System.EventHandler(this.btnSCAN_Click);
             // 
