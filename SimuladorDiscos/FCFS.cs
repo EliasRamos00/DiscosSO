@@ -131,8 +131,8 @@ namespace SimuladorDiscos
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu form = new Menu();
-            form.Show();
+            Menu nuevoForm = new Menu();
+            nuevoForm.ShowDialog();
         }
         private void FCFS_FormClosing(object sender, FormClosingEventArgs e)
         {

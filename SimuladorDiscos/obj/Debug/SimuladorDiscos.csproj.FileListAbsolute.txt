@@ -11,3 +11,7 @@ C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\Simu
 C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.FCFS.resources
 C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.SSTF.resources
 C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.SCAN.resources
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\bin\Debug\SimuladorDiscos.exe.manifest
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\bin\Debug\SimuladorDiscos.application
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.exe.manifest
+C:\Users\Elias Ramos\source\repos\SimuladorDiscos\SimuladorDiscos\obj\Debug\SimuladorDiscos.application
