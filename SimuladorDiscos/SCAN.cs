@@ -15,10 +15,9 @@ namespace SimuladorDiscos
     {
 
             #region VARIABLES
-            int k = 0;
-            int Fila = 0;
+           
             int segundosEnProceso = 0;
-            Boolean proAct = false;
+           
             int tiempoRow;
             int j = 0;
             int segundos = 0;
@@ -39,7 +38,7 @@ namespace SimuladorDiscos
             int indexSeleccionadoPrimero;
             Boolean arriba = true;
             Proceso[] pr = new Proceso[20];
-            int[] distancias = new int[20];
+            
             List<int> yaestan = new List<int>();
 
             #endregion
@@ -64,14 +63,13 @@ namespace SimuladorDiscos
             distbaja = 500;
             for (int i = 0; i < 10; i++)
             {
-                if (pistaActual >= 250)
-                {
+                
                     if (pr[i].prioridad != pr[indexSeleccionadoPrimero].prioridad)
                     {
                         pistaComparar = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
                         diff = pistaComparar - pistaActual;
                         diff = Math.Abs(diff);
-                        if (diff <= distbaja && diff != 0 && BuscarRepetidos(i))
+                        if (diff <= distbaja && pistaComparar>= pistaActual && BuscarRepetidos(i))
                         {
                             distbaja = diff;
                             indexMasBaja = i;
@@ -80,11 +78,11 @@ namespace SimuladorDiscos
 
                     }
 
-                }
+                
             }
             for (int i = 0; i < 10; i++)
             {
-                if (pistaActual < 250 && arriba==true)
+                if (arriba)
                 {
 
                     if (pr[i].prioridad != pr[indexSeleccionadoPrimero].prioridad)
