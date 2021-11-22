@@ -32,20 +32,19 @@ namespace SimuladorDiscos
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblTimer = new System.Windows.Forms.Label();
-            this.lblLabelTimer = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.dgvProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.lblLabelTimer = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +74,42 @@ namespace SimuladorDiscos
             this.dataGridView1.Size = new System.Drawing.Size(567, 165);
             this.dataGridView1.TabIndex = 0;
             // 
+            // dgvProceso
+            // 
+            this.dgvProceso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvProceso.HeaderText = "Peticiones";
+            this.dgvProceso.Name = "dgvProceso";
+            // 
+            // dgvLlegada
+            // 
+            this.dgvLlegada.HeaderText = "Llegada";
+            this.dgvLlegada.Name = "dgvLlegada";
+            this.dgvLlegada.Width = 70;
+            // 
+            // dgvCPU
+            // 
+            this.dgvCPU.HeaderText = "CPU";
+            this.dgvCPU.Name = "dgvCPU";
+            this.dgvCPU.Width = 70;
+            // 
+            // dgvPrioridad
+            // 
+            this.dgvPrioridad.HeaderText = "Pista";
+            this.dgvPrioridad.Name = "dgvPrioridad";
+            this.dgvPrioridad.Width = 70;
+            // 
+            // dgvTiempo
+            // 
+            this.dgvTiempo.HeaderText = "Tiempo de Retorno";
+            this.dgvTiempo.Name = "dgvTiempo";
+            this.dgvTiempo.Width = 70;
+            // 
+            // dgvTiempoEspera
+            // 
+            this.dgvTiempoEspera.HeaderText = "Tiempo de Espera";
+            this.dgvTiempoEspera.Name = "dgvTiempoEspera";
+            this.dgvTiempoEspera.Width = 70;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
@@ -86,7 +121,6 @@ namespace SimuladorDiscos
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnStart, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnStop, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblTimer, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLabelTimer, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnBack, 1, 3);
@@ -126,18 +160,6 @@ namespace SimuladorDiscos
             this.btnStop.Text = "Detener";
             this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.NavajoWhite;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(445, 288);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Procesos Terminados";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // lblTimer
             // 
@@ -181,42 +203,6 @@ namespace SimuladorDiscos
             this.timer.Interval = 150;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // dgvProceso
-            // 
-            this.dgvProceso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvProceso.HeaderText = "Peticiones";
-            this.dgvProceso.Name = "dgvProceso";
-            // 
-            // dgvLlegada
-            // 
-            this.dgvLlegada.HeaderText = "Llegada";
-            this.dgvLlegada.Name = "dgvLlegada";
-            this.dgvLlegada.Width = 70;
-            // 
-            // dgvCPU
-            // 
-            this.dgvCPU.HeaderText = "CPU";
-            this.dgvCPU.Name = "dgvCPU";
-            this.dgvCPU.Width = 70;
-            // 
-            // dgvPrioridad
-            // 
-            this.dgvPrioridad.HeaderText = "Pista";
-            this.dgvPrioridad.Name = "dgvPrioridad";
-            this.dgvPrioridad.Width = 70;
-            // 
-            // dgvTiempo
-            // 
-            this.dgvTiempo.HeaderText = "Tiempo de Retorno";
-            this.dgvTiempo.Name = "dgvTiempo";
-            this.dgvTiempo.Width = 70;
-            // 
-            // dgvTiempoEspera
-            // 
-            this.dgvTiempoEspera.HeaderText = "Tiempo de Espera";
-            this.dgvTiempoEspera.Name = "dgvTiempoEspera";
-            this.dgvTiempoEspera.Width = 70;
-            // 
             // FCFS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,7 +227,6 @@ namespace SimuladorDiscos
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblLabelTimer;
         private System.Windows.Forms.Button btnBack;

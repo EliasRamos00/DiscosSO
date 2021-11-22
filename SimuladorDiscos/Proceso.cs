@@ -23,19 +23,5 @@ namespace SimuladorDiscos
         { 
         
         }
-        public string prToString()
-        {
-            switch (this.prioridad)
-            {
-                case 1:
-                    return "Low";
-                case 2:
-                    return "Medium";
-                case 3:
-                    return "High";
-                default:
-                    return "Low";
-            }
-        }
     }
 }

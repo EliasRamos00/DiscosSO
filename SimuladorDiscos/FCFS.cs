@@ -171,15 +171,15 @@ namespace SimuladorDiscos
                 ActualizarFilas();                
                 Thread.Sleep(100);
             }
+
           
         }
         private void btnStop_Click(object sender, EventArgs e)
         {
             timer.Enabled = false;
         }
-        #endregion
 
-        private void lblTimer_TextChanged(object sender, EventArgs e)
+    private void lblTimer_TextChanged(object sender, EventArgs e)
         {
             btnStart.Enabled = false;
             if (tiempoRow == 0)
@@ -207,7 +207,6 @@ namespace SimuladorDiscos
 
 
         }
-
         private void lblLabelTimer_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -215,4 +214,7 @@ namespace SimuladorDiscos
             nuevoForm.Show();
         }
     }
-}
+
+
+        #endregion
+    }
