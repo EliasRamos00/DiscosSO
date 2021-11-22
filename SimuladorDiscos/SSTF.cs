@@ -222,13 +222,13 @@ namespace SimuladorDiscos
         private void btnStart_Click(object sender, EventArgs e)
         {
             btnStop.Show();
-            
+            btnStart.Hide();
             timer.Enabled = true;
             for (int i = 0; i <= 9; i++)
             {
                  Acomodar(generarNP());
                  ActualizarFilas();
-                 Thread.Sleep(100);
+                 Thread.Sleep(7);
 
             }
         }
