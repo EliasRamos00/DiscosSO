@@ -33,16 +33,21 @@ namespace SimuladorDiscos
         int distbaja=0;
         int rowAEjecutar;
         int indexMasBaja;
+        int ñ;
+        int pistaSiguiente;
+        int indexSeleccionadoPrimero;
         Proceso[] pr = new Proceso[20];
         int[] distancias = new int[20];
+        List<int> yaestan = new List<int>();
 
         #endregion
 
         #region CONSTRUCTORES
         public SSTF()
-                {
-                    InitializeComponent();
-                }
+        {
+            InitializeComponent();
+            btnStop.Hide();
+        }
 
 
 
@@ -53,19 +58,19 @@ namespace SimuladorDiscos
 
         public void masCercano(int pistaActual)
         {
-            indexMasBaja = pistaActual;
+           
             distbaja = 500;
             
             for (int i = 0; i < 10; i++) {
-                if (i != pistaActual) {
-                    pistaComparar = Convert.ToInt32(dataGridView1.Rows[i+1].Cells[3].Value);
+                if (pr[i].prioridad != pr[indexSeleccionadoPrimero].prioridad) {
+                    pistaComparar = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
                     diff = pistaComparar - pistaActual;
                     diff = Math.Abs(diff);
-                    if (diff<= distbaja && diff != 0)
+                    if (diff<= distbaja && diff != 0 && BuscarRepetidos(i))
                     {
+
                         distbaja = diff;
-                        indexMasBaja = i;
-                        
+                        indexMasBaja = i;                    
                     }
                 }
             }   
@@ -122,13 +127,10 @@ namespace SimuladorDiscos
             countLlegada++;
             return new Proceso(aux, countLlegada, tiempo, pista, tiempo);//string n, int ll, int cpu, int prio,int t
         }
-
-
         private void Acomodar(Proceso p)
         {
             pr[countLlegada] = p;
         }
-
         private void ActualizarFilas()
         {
 
@@ -152,20 +154,15 @@ namespace SimuladorDiscos
         }
         private void tiempoSelectedRow()
         {
-           if (k <= 10)
-           {
-                dataGridView1.Rows[k].Selected = true;
-                tiempoRow = Convert.ToInt32(dataGridView1.Rows[k].Cells[4].Value);
-           }
-            
-
-
+                dataGridView1.Rows[rowAEjecutar].Selected = true;
+                tiempoRow = Convert.ToInt32(dataGridView1.Rows[rowAEjecutar].Cells[4].Value);
         }
         private void tiempoSelectedRow2(int row)
         {
-       
+            
             dataGridView1.Rows[row].Selected = true;
             tiempoRow = Convert.ToInt32(dataGridView1.Rows[row].Cells[4].Value);
+            indexSeleccionadoPrimero = row;
             
           
         }
@@ -173,6 +170,22 @@ namespace SimuladorDiscos
         {                  
                     rowAEjecutar = pr[indexMasBaja].llegada;
                     tiempoSelectedRow2(rowAEjecutar);              
+        }
+        public Boolean BuscarRepetidos(int j)
+        {
+            if(yaestan.Count >= 0)
+            {
+                for (int i=0; i<yaestan.Count; i++)
+                {
+                    if (j == yaestan[i])
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            
+            return true;
         }
 
 
@@ -185,11 +198,14 @@ namespace SimuladorDiscos
                 segundosEnProceso = 0;
                 tiempoRow = 0;
                 dataGridView1.Rows[rowAEjecutar].DefaultCellStyle.BackColor = Color.Yellow;
-               
+                pistaSiguiente = Convert.ToInt32(dataGridView1.Rows[rowAEjecutar].Cells[3].Value);
+                dataGridView1.Rows[rowAEjecutar].Selected = false;
+                yaestan.Add(rowAEjecutar);               
+                masCercano(pistaSiguiente);
                 aEjecutar();
 
 
-                //Fila++; k++;
+                Fila++; k++;
                 return true;
             }
             else
@@ -205,24 +221,27 @@ namespace SimuladorDiscos
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            btnStop.Show();
+            
             timer.Enabled = true;
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i <= 9; i++)
             {
                  Acomodar(generarNP());
                  ActualizarFilas();
                  Thread.Sleep(100);
 
             }
-
-
-
         }
 
         private void lblTimer_TextChanged(object sender, EventArgs e)
         {
             btnStart.Enabled = false;
-            primeraPista = Convert.ToInt32(dataGridView1.Rows[0].Cells[3].Value);
-            masCercano(primeraPista);
+            if (ñ==0) {
+                primeraPista = Convert.ToInt32(dataGridView1.Rows[0].Cells[3].Value);
+
+                masCercano(primeraPista);
+            }
+            ñ = 1;
             if (tiempoRow == 0)
             {
                tiempoSelectedRow();
@@ -239,8 +258,9 @@ namespace SimuladorDiscos
                 dataGridView1.Rows[rowAEjecutar].DefaultCellStyle.BackColor = Color.Yellow;
 
             }
-            if (segundos == 150)
+            if (segundos == 200)
             {
+
                 timer.Enabled = false;
 
             }
@@ -252,6 +272,39 @@ namespace SimuladorDiscos
             segundos++;
             segundosEnProceso++;
             lblTimer.Text = segundos.ToString();
+            if (yaestan.Count == 10)
+            {
+                timer.Enabled = false;
+                dataGridView1.Rows[rowAEjecutar].Selected = false;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu nuevoForm = new Menu();
+            nuevoForm.ShowDialog();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+
+
+            if (timer.Enabled)
+            {
+                btnStop.Text = "Reanudar";
+                timer.Stop();
+                return;
+            }
+
+            if (!timer.Enabled)
+            {
+                btnStop.Text = "Detener";
+                timer.Start();
+                return;
+            }
+
+
         }
     }
 }

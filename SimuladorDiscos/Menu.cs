@@ -28,20 +28,20 @@ namespace SimuladorDiscos
         private void btnFCFS_Click(object sender, EventArgs e)
         {
             FCFS form = new FCFS();
-            form.Show();
-            this.Hide();
+            form.ShowDialog();
+            //this.Hide();
         }
         private void btnSSTF_Click(object sender, EventArgs e)
         {
             SSTF form = new SSTF();
-            form.Show();
-            this.Hide();
+            form.ShowDialog();
+            //this.Hide();
         }
         private void btnSCAN_Click(object sender, EventArgs e)
         {
             SCAN form = new SCAN();
-            form.Show();
-            this.Hide();
+            form.ShowDialog();
+            //this.Hide();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

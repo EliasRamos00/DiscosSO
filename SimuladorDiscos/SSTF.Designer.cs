@@ -161,6 +161,7 @@ namespace SimuladorDiscos
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Detener";
             this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // lblTimer
             // 
@@ -196,9 +197,11 @@ namespace SimuladorDiscos
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Atras";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // timer
             // 
+            this.timer.Interval = 150;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // SSTF
