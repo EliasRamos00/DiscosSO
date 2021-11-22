@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SimuladorDiscos.exe" version="1.0.0.1" publicKeyToken="35df60027e6279bc" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SimuladorDiscos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SimuladorDiscos.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimuladorDiscos.exe" size="31240">
+      <assemblyIdentity name="SimuladorDiscos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nZz6QhEFOL/5Bugr/if1zB9r9/P/4vvqBJhG6c9r8cU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SimuladorDiscos.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-MGJKFCN\Elias Ramos" issuerKeyHash="fbdddf8d7354c58b8ebe7a1b2795082732f91195" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>aZonafcXFqRfUYdKAbvhUPHDNgDZT8oObfn/wzh3UhQ=</DigestValue></Reference></SignedInfo><SignatureValue>u9wUfmYQnH3EBG8gtQHaEJUdEgEiFZN+iK5uLQri/mJS78tCKMBx8X4vzef1cIIQYtHmtsMubZGKp9Cu2NYMdLhwXnmysr0JMoyhd/bJ2NW7W5vogo2FQ/RYiYbvLSmsL6BxeSTznhnSrrMNPowcXmj12rShiFwh4l017hzDeBw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>14gI8OYJemowyo4nlWfCTgNhXls9AmowGqYsfsKRFpnp+gBQ0GvynrqEpZxNOUqdRPZAE0cz3TRuc02g5JPMxIPr5M4AQIph8ixx2/SovlRcuzbPBpgOeQbQNRMEf2TM71fq0EJUOgh5u/qVJcVVn5dIT0tRhsNN9G2wtJorbsU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="14527738c3fff96d0eca4fd90036c3f150e1bb014a87515fa41617f769279a69" Description="" Url=""><as:assemblyIdentity name="SimuladorDiscos.exe" version="1.0.0.1" publicKeyToken="35df60027e6279bc" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-MGJKFCN\Elias Ramos</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dgMIBwhkkBycC9XA7hVzDDrNRUBguHVkcEHDqYZ+6M8=</DigestValue></Reference></SignedInfo><SignatureValue>NO4dZgjEpM/3iukYYWl75k7pDYGPIUOWmlPVTLp9i6+XOv7kPFoo6GC1bcQn4FKqwfJrevI8hLyimwhCBF6PSaDH3IwH+2gqiI6eNI7sH6/AinhzcZuFwW7GDBbbd22Xr0KQnqeI1AtlfRL5XIKkPoMGJtTzmuavB/QooJ7Nuk8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>14gI8OYJemowyo4nlWfCTgNhXls9AmowGqYsfsKRFpnp+gBQ0GvynrqEpZxNOUqdRPZAE0cz3TRuc02g5JPMxIPr5M4AQIph8ixx2/SovlRcuzbPBpgOeQbQNRMEf2TM71fq0EJUOgh5u/qVJcVVn5dIT0tRhsNN9G2wtJorbsU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICBTCCAW6gAwIBAgIQT5JFn3m8kbBBTk/5vTxJzDANBgkqhkiG9w0BAQsFADBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAE0ARwBKAEsARgBDAE4AXABFAGwAaQBhAHMAIABSAGEAbQBvAHMwHhcNMjExMTIyMDg0OTI0WhcNMjIxMTIyMTQ0OTI0WjBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAE0ARwBKAEsARgBDAE4AXABFAGwAaQBhAHMAIABSAGEAbQBvAHMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANeICPDmCXpqMMqOJ5Vnwk4DYV5bPQJqMBqmLH7CkRaZ6foAUNBr8p66hKWcTTlKnUT2QBNHM900bnNNoOSTzMSD6+TOAECKYfIscdv0qL5UXLs2zwaYDnkG0DUTBH9kzO9X6tBCVDoIebv6lSXFVZ+XSE9LUYbDTfRtsLSaK27FAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAzmEk+hJ1jEVZDTuX0fO/dsHPoOj1SniTpsmisk4UlD4mEz2agsnwWhC5sfmeJivIC1TMhEr3rCwsMkOAM1fXwcK43mSxcZVVL6gYNzhbV/H1SqoTystrbwzP/oV0iqddf4eDpYHHm4IVHyvGd9TIbispGfwT8GXZ7LXn8wjc2S4=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
